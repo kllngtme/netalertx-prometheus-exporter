@@ -42,3 +42,4 @@ Prometheus.yml:
     static_configs:
       - targets: ['*NETALERTX-EXPORTERIP*:9000']
 ```
+<img width="1616" height="633" alt="screenshot" src="https://github.com/user-attachments/assets/0a2e0026-d815-4c5f-af05-abc6692bec55" />

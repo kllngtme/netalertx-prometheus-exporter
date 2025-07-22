@@ -7,7 +7,7 @@ A simple Flask-based Prometheus exporter for NetAlertX device statistics.
 - Grafana with Prometheus | https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-prometheus/
 
 ## Features
-- Exposes device totals, connected, down, and new devices as Prometheus metrics.
+- Exposes Connected Devices, Total, New, and Down devices as Prometheus metrics.
 - Supports environment variables for easy configuration.
 - Compatible with Docker for quick deployment.
 

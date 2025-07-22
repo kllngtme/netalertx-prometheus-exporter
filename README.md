@@ -1,4 +1,4 @@
-# NetAlertX Prometheus Exporter
+# NetAlertX Prometheus Exporter for Grafana
 This is a way to import data from NetAlertX to Grafana graphs.
 A simple Flask-based Prometheus exporter for NetAlertX device statistics.
 

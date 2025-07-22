@@ -2,6 +2,10 @@
 This is a way to import data from NetAlertX to Grafana graphs.
 A simple Flask-based Prometheus exporter for NetAlertX device statistics.
 
+## REQUIREMENTS
+- NetAlertX
+- Grafana with Prometheus
+
 ## Features
 - Exposes device totals, connected, down, and new devices as Prometheus metrics.
 - Supports environment variables for easy configuration.
@@ -34,12 +38,19 @@ services:
 ```
 
 Access and test netalertx-exporter metrics with:
+
 If within container: ```curl http://localhost:9000/metrics```
+
 Outside of host: ```curl http://:netalertx-exporterIP:9000/metrics```
 
+
+
 Testing along the way if needed. You should be able to use this to test directly with your NetAlertX server:
+
 ```curl -H "X-API-Key: t_ZzKDKaYmBWcJ96bi63o6" http://192.168.1.35:20211/php/server/devices.php?action=getDevices```
+
 ```curl -H "X-API-Key: t_ZzKDKaYmBWcJ96bi63o6" http://192.168.1.35:20211/php/server/devices.php?action=getDevicesTotals```
+
 
 Prometheus.yml:
 ```

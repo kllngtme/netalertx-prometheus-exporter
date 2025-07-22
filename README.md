@@ -3,7 +3,7 @@ This is a way to import data from NetAlertX to Grafana graphs.
 A simple Flask-based Prometheus exporter for NetAlertX device statistics.
 
 ## REQUIREMENTS
-- NetAlertX
+- NetAlertX | https://github.com/jokob-sk/NetAlertX/
 - Grafana with Prometheus
 
 ## Features

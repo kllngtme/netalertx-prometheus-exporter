@@ -29,12 +29,13 @@ services:
     environment:
       NETALERTX_IP: 192.168.1.35
       NETALERTX_PORT: 20211
-      API_KEY: t_ZzKDKaYmBWcJ86bi63o6
+      API_KEY: t_ZzKDKaYmBWcJ96bi63o6
     restart: unless-stopped
 ```
 
-Access metrics at:
+Access and test metrics at:
 `http://localhost:9000/metrics`
+or using 
 
 Prometheus.yml:
 ```

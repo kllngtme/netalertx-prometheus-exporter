@@ -4,7 +4,7 @@ A simple Flask-based Prometheus exporter for NetAlertX device statistics.
 
 ## REQUIREMENTS
 - NetAlertX | https://github.com/jokob-sk/NetAlertX/
-- Grafana with Prometheus
+- Grafana with Prometheus | https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-prometheus/
 
 ## Features
 - Exposes device totals, connected, down, and new devices as Prometheus metrics.

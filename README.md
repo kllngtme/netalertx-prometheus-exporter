@@ -17,6 +17,7 @@ A simple Flask-based Prometheus exporter for NetAlertX device statistics.
 
 
 Docker-Compose example:
+```
 services:
   netalertx-exporter:
     container_name: netalertx-exporter
@@ -30,9 +31,10 @@ services:
       NETALERTX_PORT: 20211
       API_KEY: t_ZzKDKaYmBWcJ86bi63o6
     restart: unless-stopped
+```
 
 Access metrics at:
-http://localhost:9000/metrics
+`http://localhost:9000/metrics`
 
 Prometheus.yml:
 

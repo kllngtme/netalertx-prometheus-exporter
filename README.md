@@ -37,7 +37,8 @@ Access metrics at:
 `http://localhost:9000/metrics`
 
 Prometheus.yml:
-
+```
   - job_name: 'netalertx'
     static_configs:
-      - targets: ['*NETALERTX-EXPORTERIP*:9000']	  
+      - targets: ['*NETALERTX-EXPORTERIP*:9000']
+```

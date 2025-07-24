@@ -3,21 +3,25 @@ This is a way to import data from NetAlertX to Grafana graphs.
 A simple Flask-based Prometheus exporter for NetAlertX device statistics.
 
 This exposes the following items for use in Grafana:
+```
 netalertx_total_devices
 netalertx_connected_devices
 netalertx_down_devices
 netalertx_favorite_devices
 netalertx_new_devices
 netalertx_archived_devices
+```
 
 Per Device statistics it can pull as well:
+```
 Device
 Device Type
-Devices Status: On-line, Off-line, or Down
+Devices Status: (On-line, Off-line, or Down)
 MAC
 IP
 Vendor
 First Connect/Last Connect
+```
 
 ## REQUIREMENTS
 - NetAlertX | https://github.com/jokob-sk/NetAlertX/

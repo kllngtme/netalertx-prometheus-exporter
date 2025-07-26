@@ -2,6 +2,11 @@
 This is a way to import data from NetAlertX to Grafana graphs.
 A simple Flask-based Prometheus exporter for NetAlertX device statistics.
 
+NetAlertX > netalertx_exporter > Prometheus > Grafana
+
+
+<img width="1886" height="1338" alt="471045109-98c2d49e-a9ae-4de0-b6f4-4a06e034e840" src="https://github.com/user-attachments/assets/94d37020-00d6-46ef-831b-dc0a57b0086c" />
+
 This exposes the following items for use in Grafana:
 ```
 netalertx_total_devices
@@ -16,7 +21,7 @@ Per Device statistics it can pull as well:
 ```
 Device
 Device Type
-Devices Status: (On-line, Off-line, or Down)
+Devices Status: (Online, Offline, or Down)
 MAC
 IP
 Vendor
@@ -27,6 +32,43 @@ First Connect/Last Connect
 - NetAlertX | https://github.com/jokob-sk/NetAlertX/
 - Grafana with Prometheus | https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-prometheus/
 
+##  Instructions
+Run this docker image, update your prometheus.yml with your netalertx_exporter info. That should be it for the "bridge" to Prometheus to Grafana. 
+You can use my Grafana Dashboard or build your own of course now that you can pull netalertx info into Grafana.
+
+```
+docker run -d \
+  --name netalertx_exporter \
+  -e NETALERTX_IP=192.168.1.35 \
+  -e NETALERTX_PORT=20211 \
+  -e API_KEY=your_api_key_here \
+  -p 9000:9000 \
+  kllngtme/netalertx_exporter:latest
+```
+
+Docker-Compose.yml:
+```
+services:
+  netalertx-exporter:
+    image:  kllngtme/netalertx_exporter:latest
+    container_name: netalertx_exporter
+    ports:
+      - "9000:9000"
+    environment:
+      NETALERTX_IP: 192.168.1.35     # Replace with your NetAlertX IP
+      NETALERTX_PORT: 20211          # Default NetAlertX port
+      API_KEY: your_api_key_here     # Replace with your NetAlertX API key
+    restart: unless-stopped
+```
+
+Prometheus.yml:
+```
+  - job_name: 'netalertx'
+    scrape_interval: 60s
+    static_configs:
+      - targets: ['netalertx_exporterIP:9000']
+```
+
 ## Environment Variables
 
 | Variable     | Description                            | Required | Default |
@@ -35,23 +77,7 @@ First Connect/Last Connect
 | `NETALERTX_PORT`| Port number for NetAlertX API         | No       | 20211   |
 | `API_KEY`       | API key for accessing NetAlertX API    | Yes      | —       |
 
-
-Docker-Compose example:
-```
-services:
-  netalertx-exporter:
-    container_name: netalertx-exporter
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "9000:9000"
-    environment:
-      NETALERTX_IP: 192.168.1.35
-      NETALERTX_PORT: 20211
-      API_KEY: t_ZzKDKaYmBWcJ96bi63o6
-    restart: unless-stopped
-```
+----------------------------------
 
 Access and test netalertx-exporter metrics with:
 
@@ -67,11 +93,3 @@ Testing along the way if needed. You should be able to use this to test directly
 
 ```curl -H "X-API-Key: t_ZzKDKaYmBWcJ96bi63o6" http://192.168.1.35:20211/php/server/devices.php?action=getDevicesTotals```
 
-
-Prometheus.yml:
-```
-  - job_name: 'netalertx'
-    static_configs:
-      - targets: ['*NETALERTX-EXPORTERIP*:9000']
-```
-<img width="1616" height="633" alt="screenshot" src="https://github.com/user-attachments/assets/0a2e0026-d815-4c5f-af05-abc6692bec55" />

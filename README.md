@@ -33,8 +33,9 @@ First Connect/Last Connect
 - Grafana with Prometheus | https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-prometheus/
 
 ##  Instructions
-Run this docker image, update your prometheus.yml with your netalertx_exporter info. That should be it for the "bridge" to Prometheus to Grafana. 
-You can use my Grafana Dashboard or build your own of course now that you can pull netalertx info into Grafana.
+Update all the specifics for your own server details. Run this docker image, update your prometheus.yml with your netalertx_exporter info. That should be it for the "bridge".
+I would just do a quick check with popping this in your browser and see if you have results: http://:netalertx-exporterIP:9000/metrics
+You should be good to use the data in Grafana at that point. You can use my Grafana Dashboard or build your own of course.
 
 ```
 docker run -d \

@@ -1,4 +1,4 @@
-Deprecated - this feature is now native to NetAlertX<br>
+DEPRECATED - this feature is now native to NetAlertX<br>
 https://github.com/jokob-sk/NetAlertX/releases/tag/v25.8.6<br>
 https://jokob-sk.github.io/NetAlertX/API/?h=prom
 

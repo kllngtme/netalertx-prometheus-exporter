@@ -1,5 +1,6 @@
 <a href="https://www.buymeacoffee.com/kllngtme" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 30px !important;width: 108px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a><br>
 
+> [!WARNING]
 DEPRECATED - this feature is now native to NetAlertX<br>
 https://github.com/jokob-sk/NetAlertX/releases/tag/v25.8.6<br>
 https://jokob-sk.github.io/NetAlertX/API/?h=prom
